@@ -8,8 +8,17 @@ services:
     ports: 
       - "4000:4000"
     restart: always
-  mongo:
-    image: mongo
-    ports: 
-      - "27017:27017"
-    restart: always
+  
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=admin
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - TZ=GMT
+    volumes:
+      - "./data/postgres"
+    ports:
+      - 5432:5432
+    
