@@ -1,24 +1,23 @@
-/* eslint-disable no-console */
+import 'reflect-metadata';
 import express from 'express';
-import bodyParser from 'body-parser';
-import favicon from 'serve-favicon';
-import path from 'path';
-import mongoose from 'mongoose';
-import cors from 'cors';
+
+import './database';
 import routes from './routes';
-import { PORT, HOST, MONGO_URI } from './utils/config';
+import uploadConfig from './config/upload';
 
 const app = express();
-const DateNow = Date().toString();
-app.use(cors())
-app.use(bodyParser.json());
 
-// app.use(favicon(path.join(`${__dirname}/public/favicon.ico`)));
+app.use(express.json());
+app.use('/files', express.static(uploadConfig.directory));
 app.use(routes);
+app.get('/', async (request, response) => {
+  response.json('Bem vindo a API do Cris !!! =D');
+});
 
-mongoose.connect(`${MONGO_URI}`, { useNewUrlParser: true }).then(() => { console.log('🛰  MongoDB, Connected') }).catch((err) => { console.log(`⛔ ${err}`) })
-
-app.listen(PORT, () => {
-  console.info('⌚ Server starting');
-  console.info(`🚀 Server started on ${HOST}${PORT} at ${DateNow}`);
+const DateNow = Date().toString();
+app.listen(process.env.PORT, () => {
+  console.log('⌚ Server starting');
+  console.log(
+    `🚀 Server started on ${process.env.HOST}${process.env.PORT} at ${DateNow}`,
+  );
 });

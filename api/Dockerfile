@@ -18,8 +18,6 @@ COPY . .
 
 RUN npm run build
 COPY .env ./dist/
-COPY .env.development ./dist/
-COPY .env.test ./dist/
 WORKDIR ./dist/
 
 EXPOSE 4000
