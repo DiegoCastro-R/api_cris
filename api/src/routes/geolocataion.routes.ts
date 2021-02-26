@@ -1,7 +1,10 @@
 // @ts-nocheck
 import { Router } from 'express';
 import fetch from 'node-fetch';
-import acidentes from '../acidentes-2015.json';
+import acidentesjaneiro from '../acidentes-2015-janeiro.json';
+import acidentesfevereiro from '../acidentes-2015-fevereiro.json';
+import acidentesmarco from '../acidentes-2015-marco.json';
+import { v4 as uuidv4 } from 'uuid';
 const geoLocationRouter = Router();
 
 geoLocationRouter.get('/', async (request, response) => {
@@ -11,10 +14,34 @@ geoLocationRouter.get('/', async (request, response) => {
     cidade: string;
   }[] = [];
   const result: any[] = [];
-  acidentes.features.forEach(item => {
+  acidentesjaneiro.features.forEach(item => {
     body.push({
+      id: uuidv4(),
       latitude: item.properties.latitude,
       longitude: item.properties.longitude,
+      descricao: item.properties.tipo,
+      data: item.properties.data,
+      detalhes: item.properties.detalhes,
+    });
+  });
+  acidentesfevereiro.features.forEach(item => {
+    body.push({
+      id: uuidv4(),
+      latitude: item.properties.latitude,
+      longitude: item.properties.longitude,
+      descricao: item.properties.tipo,
+      data: item.properties.data,
+      detalhes: item.properties.detalhes,
+    });
+  });
+  acidentesmarco.features.forEach(item => {
+    body.push({
+      id: uuidv4(),
+      latitude: item.properties.latitude,
+      longitude: item.properties.longitude,
+      descricao: item.properties.tipo,
+      data: item.properties.data,
+      detalhes: item.properties.detalhes,
     });
   });
 
