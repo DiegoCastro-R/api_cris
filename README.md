@@ -30,8 +30,8 @@ Essa API faz gerenciamento dos usuarios e tratamento dos dados de acidentes para
     email: String,
     password: String,
   }
-  </pre>
   </code>
+  </pre>
  <h4>/sessions</h4> 
   autenticação gerando token JWT.
   <pre>
@@ -41,15 +41,17 @@ Essa API faz gerenciamento dos usuarios e tratamento dos dados de acidentes para
     name: String,
     email: String,
   }
-  </pre>
+ 
   </code>
+  </pre>
  <h4>/geolocations</h4>
   trás informações de geolocalização e alguns detalhes sobre acidentes ocorridos em Recife-PE.
- <pre>
+ 
+ 
  <code>
  HTTP METHOD: POST
  </code>
- </pre>
+
 
 <p align="center">
 <a href="http://dados.recife.pe.gov.br/organization/companhia-de-transito-e-transporte-urbano-do-recife-cttu">Fonte dos Dados</a>&nbsp &nbsp &nbsp
