@@ -1,4 +1,4 @@
-<h1> apiCRis </h1>
+<h1> API do Cris </h1>
 
 <h6> CRIS, um aplicativo para smartphones que tem como propósito a mesma missão de São Cristóvão que é ter firmeza e vigilância para que todos cheguem no destino sem acidentes!
 Essa API faz gerenciamento dos usuarios e tratamento dos dados de acidentes para exibir no mapa de calor.
@@ -29,5 +29,5 @@ Essa API faz gerenciamento dos usuarios e tratamento dos dados de acidentes para
   ## API Online:
  
 <p align="center">
-<a href="https://api.crisapp.tk/">
+https://api.crisapp.tk/
  </p>
