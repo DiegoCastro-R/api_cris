@@ -49,7 +49,7 @@ Essa API faz gerenciamento dos usuarios e tratamento dos dados de acidentes para
  
  <pre>
  <code>
- HTTP METHOD: POST
+ HTTP METHOD: GET
  </code>
 </pre>
 
